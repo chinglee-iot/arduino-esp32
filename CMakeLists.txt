@@ -38,45 +38,45 @@ set(CORE_SRCS
   )
 
 set(LIBRARY_SRCS
-  libraries/ArduinoOTA/src/ArduinoOTA.cpp
-  libraries/AsyncUDP/src/AsyncUDP.cpp
+  # libraries/ArduinoOTA/src/ArduinoOTA.cpp
+  # libraries/AsyncUDP/src/AsyncUDP.cpp
   libraries/BluetoothSerial/src/BluetoothSerial.cpp
-  libraries/DNSServer/src/DNSServer.cpp
+  # libraries/DNSServer/src/DNSServer.cpp
   libraries/EEPROM/src/EEPROM.cpp
-  libraries/ESPmDNS/src/ESPmDNS.cpp
+  # libraries/ESPmDNS/src/ESPmDNS.cpp
   libraries/FFat/src/FFat.cpp
   libraries/FS/src/FS.cpp
   libraries/FS/src/vfs_api.cpp
-  libraries/HTTPClient/src/HTTPClient.cpp
-  libraries/HTTPUpdate/src/HTTPUpdate.cpp
-  libraries/NetBIOS/src/NetBIOS.cpp
+  # libraries/HTTPClient/src/HTTPClient.cpp
+  # libraries/HTTPUpdate/src/HTTPUpdate.cpp
+  # libraries/NetBIOS/src/NetBIOS.cpp
   libraries/Preferences/src/Preferences.cpp
   libraries/SD_MMC/src/SD_MMC.cpp
   libraries/SD/src/SD.cpp
   libraries/SD/src/sd_diskio.cpp
   libraries/SD/src/sd_diskio_crc.c
-  libraries/SimpleBLE/src/SimpleBLE.cpp
+  # libraries/SimpleBLE/src/SimpleBLE.cpp
   libraries/SPIFFS/src/SPIFFS.cpp
   libraries/SPI/src/SPI.cpp
   libraries/Ticker/src/Ticker.cpp
-  libraries/Update/src/Updater.cpp
-  libraries/Update/src/HttpsOTAUpdate.cpp
-  libraries/WebServer/src/WebServer.cpp
-  libraries/WebServer/src/Parsing.cpp
-  libraries/WebServer/src/detail/mimetable.cpp
-  libraries/WiFiClientSecure/src/ssl_client.cpp
-  libraries/WiFiClientSecure/src/WiFiClientSecure.cpp
-  libraries/WiFi/src/ETH.cpp
-  libraries/WiFi/src/WiFiAP.cpp
-  libraries/WiFi/src/WiFiClient.cpp
-  libraries/WiFi/src/WiFi.cpp
-  libraries/WiFi/src/WiFiGeneric.cpp
-  libraries/WiFi/src/WiFiMulti.cpp
-  libraries/WiFi/src/WiFiScan.cpp
-  libraries/WiFi/src/WiFiServer.cpp
-  libraries/WiFi/src/WiFiSTA.cpp
-  libraries/WiFi/src/WiFiUdp.cpp
-  libraries/WiFiProv/src/WiFiProv.cpp
+  # libraries/Update/src/Updater.cpp
+  # libraries/Update/src/HttpsOTAUpdate.cpp
+  # libraries/WebServer/src/WebServer.cpp
+  # libraries/WebServer/src/Parsing.cpp
+  # libraries/WebServer/src/detail/mimetable.cpp
+  # libraries/WiFiClientSecure/src/ssl_client.cpp
+  # libraries/WiFiClientSecure/src/WiFiClientSecure.cpp
+  # libraries/WiFi/src/ETH.cpp
+  # libraries/WiFi/src/WiFiAP.cpp
+  # libraries/WiFi/src/WiFiClient.cpp
+  # libraries/WiFi/src/WiFi.cpp
+  # libraries/WiFi/src/WiFiGeneric.cpp
+  # libraries/WiFi/src/WiFiMulti.cpp
+  # libraries/WiFi/src/WiFiScan.cpp
+  # libraries/WiFi/src/WiFiServer.cpp
+  # libraries/WiFi/src/WiFiSTA.cpp
+  # libraries/WiFi/src/WiFiUdp.cpp
+  # libraries/WiFiProv/src/WiFiProv.cpp
   libraries/Wire/src/Wire.cpp
   )
 
@@ -172,7 +172,7 @@ set(BLE_SRCS
   libraries/BLE/src/GeneralUtils.cpp
   )
 
-set(COMPONENT_SRCS ${CORE_SRCS} ${LIBRARY_SRCS} ${AZURE_SRCS} ${BLE_SRCS})
+set(COMPONENT_SRCS ${CORE_SRCS} ${LIBRARY_SRCS})
 
 set(COMPONENT_ADD_INCLUDEDIRS
   variants/esp32/
@@ -180,8 +180,8 @@ set(COMPONENT_ADD_INCLUDEDIRS
   libraries/ArduinoOTA/src
   libraries/AsyncUDP/src
   libraries/AzureIoT/src
-  libraries/BLE/src
-  libraries/BluetoothSerial/src
+  # libraries/BLE/src
+  # libraries/BluetoothSerial/src
   libraries/DNSServer/src
   libraries/EEPROM/src
   libraries/ESP32/src
@@ -208,8 +208,8 @@ set(COMPONENT_ADD_INCLUDEDIRS
 
 set(COMPONENT_PRIV_INCLUDEDIRS cores/esp32/libb64)
 
-set(COMPONENT_REQUIRES spi_flash mbedtls mdns ethernet esp_adc_cal wifi_provisioning)
-set(COMPONENT_PRIV_REQUIRES fatfs nvs_flash app_update spiffs bootloader_support openssl bt esp_http_client esp_https_ota)
+set(COMPONENT_REQUIRES spi_flash mbedtls mdns esp_adc_cal)
+set(COMPONENT_PRIV_REQUIRES fatfs nvs_flash app_update spiffs bootloader_support openssl bt wifi_provisioning)
 
 register_component()
 
